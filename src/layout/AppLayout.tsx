@@ -1,30 +1,37 @@
-import { Layout } from 'antd';
-import { AppHeader } from '@/components';
+import { Col, Layout, Row } from 'antd';
+import { Container } from '.';
+import { AppHeader, AppMenu } from '../components';
+import { Home } from '../pages';
 
 const { Header, Content, Sider, Footer } = Layout;
 
-const AppLayout = () => {
+export const AppLayout = () => {
   return (
     <Layout>
-      <Header>
+      <Header style={{ height: 'unset' }}>
         <AppHeader />
       </Header>
+
       <Layout>
-        <Sider>
-          <AppMenu />
-        </Sider>
+        <Container>
+          <Row style={{ marginTop: 15 }} gutter={15}>
+            <Col>
+              <Sider>
+                <AppMenu />
+              </Sider>
+            </Col>
 
-        <Content>
-          main content
-        </Content>
+            <Col>
+              <Content>
+                <Home />
+              </Content>
+            </Col>
+          </Row>
+        </Container>
 
-        <Sider>
-          right sidebar
-        </Sider>
       </Layout>
-      <Footer>footer</Footer>
+
+      <Footer></Footer>
     </Layout>
   );
-}
-
-export default AppLayout;
+};

@@ -1,11 +1,19 @@
-import React from 'react'
+import { Menu } from 'antd';
+import { menuItems } from './menuItems';
 
-const AppMenu = () => {
+const { Item } = Menu;
+
+export const AppMenu = () => {
   return (
-    <div>
-      
-    </div>
-  )
+    <>
+      <Menu>
+        {menuItems.map(item => (
+          <Item key={item.title}>
+            {item.icon}
+            <span>{item.title}</span>
+          </Item>
+        ))}
+      </Menu>
+    </>
+  );
 }
-
-export default AppMenu

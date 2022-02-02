@@ -1,11 +1,15 @@
 import { FC } from 'react';
+import { Container } from '../../layout';
+import styles from './AppHeader.module.scss';
 
-const AppHeader: FC = () => {
+export const AppHeader: FC = () => {
   return (
-    <div>
-      <h1>Header</h1>
+    <div className={styles.header}>
+      <Container>
+        <div className={styles.logo}>
+          VH
+        </div>
+      </Container>
     </div>
   );
 }
-
-export default AppHeader;
