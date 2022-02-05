@@ -13,20 +13,15 @@ export const AppLayout = () => {
       </Header>
 
       <Layout>
-        <Container>
-          <Row style={{ marginTop: 15 }} gutter={15}>
-            <Col>
-              <Sider>
-                <AppMenu />
-              </Sider>
-            </Col>
+        <Container style={{ marginTop: 15, display: 'flex' }}>
+          {/* <Row style={{ marginTop: 15 }} gutter={15}> */}
+          <Sider>
+            <AppMenu />
+          </Sider>
 
-            <Col>
-              <Content>
-                <Home />
-              </Content>
-            </Col>
-          </Row>
+          <Content style={{ marginLeft: 15 }}>
+            <Home />
+          </Content>
         </Container>
 
       </Layout>

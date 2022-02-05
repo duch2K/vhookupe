@@ -6,7 +6,7 @@ const { Item } = Menu;
 export const AppMenu = () => {
   return (
     <>
-      <Menu>
+      <Menu style={{width: '100%'}}>
         {menuItems.map(item => (
           <Item key={item.title}>
             {item.icon}
