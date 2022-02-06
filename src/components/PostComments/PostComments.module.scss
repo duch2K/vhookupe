@@ -1,0 +1,7 @@
+.comment {
+  margin-bottom: 15px;
+  & > div {
+    padding-top: unset;
+    padding-bottom: unset;
+  }
+}

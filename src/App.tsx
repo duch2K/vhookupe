@@ -1,12 +1,16 @@
 // import 'antd/dist/antd.css';
-import './index.scss';
+import './styles/index.scss';
+import { Route, Routes } from 'react-router-dom';
 import { AppLayout } from './layout';
+import { Home } from './pages';
 
 function App() {
   return (
-    <>
-      <AppLayout />
-    </>
+    <Routes>
+      <Route path="/" element={<AppLayout />}>
+        <Route path="feed" element={<Home />} />
+      </Route>
+    </Routes>
   );
 }
 

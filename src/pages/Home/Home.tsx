@@ -1,14 +1,22 @@
 import { Card, Col, Row } from 'antd';
 import { FC } from 'react';
-import { Post } from '../../components/Post/Post';
+import { Post } from '../../components';
+import { data } from './postsData';
 
 export const Home: FC = () => {
   return (
     <>
-      {/* <Post /> */}
       <Row gutter={15}>
         <Col span={17}>
-          <Post />
+          {data.map(item => (
+            <Post
+              author={item.author}
+              date={item.date}
+              text={item.text}
+              key={item._id}
+              comments={item.comments}
+            />
+          ))}
         </Col>
 
         <Col span={7}>

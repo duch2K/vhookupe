@@ -1,23 +1,39 @@
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-import { Avatar, Card } from 'antd';
+import { FC } from 'react';
+import { Avatar, Button, Card, Divider, Space, Typography } from 'antd';
+import { CommentOutlined, HeartOutlined, ShareAltOutlined } from '@ant-design/icons';
+import { PostProps } from './Post.props';
+import { PostComments } from '../';
+import styles from './Post.module.scss';
 
 const { Meta } = Card;
+const { Paragraph } = Typography;
 
-export const Post = () => {
+export const Post: FC<PostProps> = ({ author, date, text, img, comments }) => {
   return (
-    <Card
-      // style={{  }}
-      actions={[
-        <SettingOutlined key="setting" />,
-        <EditOutlined key="edit" />,
-        <EllipsisOutlined key="ellipsis" />,
-      ]}
-    >
+    <Card className={styles.post}>
       <Meta
-        avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-        title="Card title"
-        description="This is the description"
+        className={styles.title}
+        avatar={<Avatar src="https://joeschmoe.io/api/v1/random" size={50} />}
+        title={author}
+        description={date}
       />
+      {text && <Paragraph>{text}</Paragraph>}
+      {img && <img src={img} alt={img} />}
+      <Space>
+        <Button icon={<HeartOutlined />} shape="round">
+          1
+        </Button>
+        <Button icon={<CommentOutlined />} shape="round">
+          1
+        </Button>
+        <Button icon={<ShareAltOutlined />} shape="round">
+          1
+        </Button>
+      </Space>
+
+      <Divider />
+
+      <PostComments comments={comments} />
     </Card>
   );
 };
