@@ -8,8 +8,8 @@ export interface MenuItem {
 }
 
 export const menuItems: MenuItem[] = [
-  { title: 'Profile', icon: <UserOutlined />, link: '' },
-  { title: 'News', icon: <LayoutOutlined />, link: '' },
-  { title: 'Messenger', icon: <MessageOutlined />, link: '' },
-  { title: 'Friends', icon: <TeamOutlined />, link: '' }
+  { title: 'Profile', icon: <UserOutlined />, link: '/profile' },
+  { title: 'News', icon: <LayoutOutlined />, link: '/feed' },
+  { title: 'Messenger', icon: <MessageOutlined />, link: '/messages' },
+  { title: 'Friends', icon: <TeamOutlined />, link: '/friends' }
 ];

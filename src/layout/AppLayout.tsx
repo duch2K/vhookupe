@@ -4,7 +4,7 @@ import { Layout } from 'antd';
 import { Container } from '.';
 import { AppHeader, AppMenu } from '../components';
 
-const { Header, Content, Sider, Footer } = Layout;
+const { Content, Sider, Footer } = Layout;
 
 export const AppLayout = () => {
   const navigate = useNavigate();
@@ -15,17 +15,15 @@ export const AppLayout = () => {
 
   return (
     <Layout>
-      <Header style={{ height: 'unset' }}>
-        <AppHeader />
-      </Header>
+      <AppHeader />
 
       <Layout>
         <Container style={{ marginTop: 15, display: 'flex' }}>
-          <Sider>
+          <Sider style={{ marginRight: 15 }}>
             <AppMenu />
           </Sider>
 
-          <Content style={{ marginLeft: 15 }}>
+          <Content>
             <Outlet />
           </Content>
         </Container>

@@ -9,6 +9,9 @@ function App() {
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route path="feed" element={<Home />} />
+        <Route path="profile" element={<Home />} />
+        <Route path="messages" element={<Home />} />
+        <Route path="friends" element={<Home />} />
       </Route>
     </Routes>
   );

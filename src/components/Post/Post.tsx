@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Avatar, Button, Card, Divider, Space, Typography } from 'antd';
 import { CommentOutlined, HeartOutlined, ShareAltOutlined } from '@ant-design/icons';
 import { PostProps } from './Post.props';
@@ -9,6 +9,12 @@ const { Meta } = Card;
 const { Paragraph } = Typography;
 
 export const Post: FC<PostProps> = ({ author, date, text, img, comments }) => {
+  const [likes, setLikes] = useState<number>(0);
+
+  const handleLike = () => {
+    setLikes(l => ++l);
+  };
+
   return (
     <Card className={styles.post}>
       <Meta
@@ -20,8 +26,12 @@ export const Post: FC<PostProps> = ({ author, date, text, img, comments }) => {
       {text && <Paragraph>{text}</Paragraph>}
       {img && <img src={img} alt={img} />}
       <Space>
-        <Button icon={<HeartOutlined />} shape="round">
-          1
+        <Button
+          shape="round"
+          icon={<HeartOutlined />}
+          onClick={handleLike}
+        >
+          {likes ? likes : null}
         </Button>
         <Button icon={<CommentOutlined />} shape="round">
           1
