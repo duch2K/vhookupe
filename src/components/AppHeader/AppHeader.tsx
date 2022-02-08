@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import { Input, Layout, Tooltip } from 'antd'
+import { Input, Layout } from 'antd';
 import { Container } from '../../layout';
 import styles from './AppHeader.module.scss';
 import { SearchOutlined } from '@ant-design/icons';
+import { UserMenu } from '../UserMenu/UserMenu';
 
 export const AppHeader: FC = () => {
   return (
-    // <div className={styles.header}>
     <Layout.Header className={styles.header}>
       <Container className={styles.container}>
         <div className={styles.sider}>
@@ -22,11 +22,8 @@ export const AppHeader: FC = () => {
           />
         </div>
 
-        <div className={styles.user}>
-          Auth
-        </div>
+        <UserMenu />
       </Container>
     </Layout.Header>
-    // </div>
   );
-}
+};

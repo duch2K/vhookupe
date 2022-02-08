@@ -21,7 +21,7 @@ export const Home: FC = () => {
 
         <Col span={7}>
           <Card>
-            Sideer
+            Under development
           </Card>
         </Col>
       </Row>

@@ -9,7 +9,7 @@ const { Meta } = Card;
 const { Paragraph } = Typography;
 
 export const Post: FC<PostProps> = ({ author, date, text, img, comments }) => {
-  const [likes, setLikes] = useState<number>(0);
+  const [likes, setLikes] = useState<number>(1);
 
   const handleLike = () => {
     setLikes(l => ++l);
@@ -31,7 +31,9 @@ export const Post: FC<PostProps> = ({ author, date, text, img, comments }) => {
           icon={<HeartOutlined />}
           onClick={handleLike}
         >
-          {likes ? likes : null}
+          <span>
+            {likes ? likes : null}
+          </span>
         </Button>
         <Button icon={<CommentOutlined />} shape="round">
           1

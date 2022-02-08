@@ -3,6 +3,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { Layout } from 'antd';
 import { Container } from '.';
 import { AppHeader, AppMenu } from '../components';
+import styles from './AppLayout.module.scss';
 
 const { Content, Sider, Footer } = Layout;
 
@@ -18,7 +19,7 @@ export const AppLayout = () => {
       <AppHeader />
 
       <Layout>
-        <Container style={{ marginTop: 15, display: 'flex' }}>
+        <Container className={styles.container}>
           <Sider style={{ marginRight: 15 }}>
             <AppMenu />
           </Sider>
